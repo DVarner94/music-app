@@ -20,7 +20,8 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
         return (
             Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
         )
-    }
+    };
+    const draghandler = (e) => { };
     //state
     const [songInfo, setSongInfo] = useState({
         currentTime: null,
@@ -38,7 +39,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
                 <FontAwesomeIcon onClick={playSongHandler} className="play" size="2x" icon={faPlay} />
                 <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight} />
             </div>
-            <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} ref={audioRef} src={currentSong.audio}></audio>
+            <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} onChange={draghandler} ref={audioRef} src={currentSong.audio}></audio>
         </div>
     )
 };
