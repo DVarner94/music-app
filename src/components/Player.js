@@ -16,6 +16,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
         const duration = e.target.duration;
         setSongInfo({ ...songInfo, currentTime: current, duration })
     };
+
     const getTime = (time) => {
         return (
             Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
