@@ -8,3 +8,5 @@ export const playAudio = (isPlaying, audioRef) => {
         }
     }
 };
+// this function keeps music playing when play button is activated,
+// and you skip or select another song. made this file so we can reuse
