@@ -14,6 +14,7 @@ const Library = ({ isPlaying, audioRef, songs, setCurrentSong }) => {
                         song={song}
                         id={song.id}
                         key={song.id}
+                        audioRef={audioRef}
                     />
                 )}
             </div>
