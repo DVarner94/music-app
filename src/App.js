@@ -23,6 +23,7 @@ function App() {
     currentTime: 0,
     duration: 0,
   });
+  const [libraryStatus, setLibraryStatus] = useState(false);
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song isPlaying={isPlaying} currentSong={currentSong} />
       <Player
         setIsPlaying={setIsPlaying}
@@ -50,7 +51,8 @@ function App() {
         setCurrentSong={setCurrentSong}
         setSongs={setSongs}
         isPlaying={isPlaying}
-        audioRef={audioRef} />
+        audioRef={audioRef}
+        libraryStatus={libraryStatus} />
       <audio
         onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler}
