@@ -46,7 +46,9 @@ input[type="range"]::-webkit-slider-thumb{
     width: 100%;
     height: 1rem;
     position: relative;
+    // makes animate track relative to track, so it only covers track
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 .animate-track{
@@ -56,4 +58,7 @@ input[type="range"]::-webkit-slider-thumb{
     position: absolute;
     top: 0;
     left: 0;
+    transform: translateX(0%);
+    pointer-events: none;
+    // allows us to drag without seeing the dragger
 }
