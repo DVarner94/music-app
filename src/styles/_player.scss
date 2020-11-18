@@ -61,3 +61,14 @@ input[type="range"]::-webkit-slider-thumb{
     pointer-events: none;
     // allows us to drag without seeing the dragger
 }
+
+@media screen and (max-width:768px){
+    .time-control{
+        img{
+            width: 90%;
+        }
+    }
+    .play-control{
+        width: 80%;
+    }
+}
